@@ -77,11 +77,7 @@ echo "Downloading $njs_url"
 release_dir=$(mktemp -d /tmp/nginx.XXXXXXXXXX)
 
 cp /tmp/nginx/sbin/nginx $release_dir/nginx
-cp -r /tmp/nginx/modules $release_dir/modules
-
 cp /tmp/nginx-debug/sbin/nginx $release_dir/nginx-debug
-cp -r /tmp/nginx-debug/modules $release_dir/modules-debug
-
 cp /tmp/nginx/conf/mime.types $release_dir/mime.types
 
 tar -zcvf /tmp/nginx-"${STACK}".tgz -C $release_dir .
