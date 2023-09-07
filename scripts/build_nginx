@@ -53,7 +53,7 @@ echo "Downloading $njs_url"
     --prefix=/tmp/nginx \
     --add-module=${temp_dir}/nginx-${NGINX_VERSION}/headers-more-nginx-module-${HEADERS_MORE_VERSION} \
     --add-module=${temp_dir}/nginx-${NGINX_VERSION}/nginx-uuid4-module-${UUID4_VERSION} \
-    --add-dynamic-module=${temp_dir}/nginx-${NGINX_VERSION}/njs-${NJS_VERSION}/nginx
+    --add-module=${temp_dir}/nginx-${NGINX_VERSION}/njs-${NJS_VERSION}/nginx
   make install
 )
 
@@ -70,7 +70,7 @@ echo "Downloading $njs_url"
     --prefix=/tmp/nginx-debug \
     --add-module=${temp_dir}/nginx-${NGINX_VERSION}/headers-more-nginx-module-${HEADERS_MORE_VERSION} \
     --add-module=${temp_dir}/nginx-${NGINX_VERSION}/nginx-uuid4-module-${UUID4_VERSION} \
-    --add-dynamic-module=${temp_dir}/nginx-${NGINX_VERSION}/njs-${NJS_VERSION}/nginx
+    --add-module=${temp_dir}/nginx-${NGINX_VERSION}/njs-${NJS_VERSION}/nginx
   make install
 )
 
