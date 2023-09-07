@@ -51,20 +51,22 @@ echo '-----> nginx-buildpack: Added start-nginx-debug to app/bin'
 cp bin/start-nginx-static "$BUILD_DIR/bin/"
 echo '-----> nginx-buildpack: Added start-nginx-static to app/bin'
 
-mkdir -p "$BUILD_DIR/config"
+# mkdir -p "$BUILD_DIR/config"
 
-if [[ ! -f $BUILD_DIR/config/mime.types ]]; then
-	cp "$BUILD_DIR/nginx/mime.types" "$BUILD_DIR/config/"
-	echo '-----> nginx-buildpack: Default mime.types copied to app/config/'
+if [[ ! -f $BUILD_DIR/mime.types ]]; then
+  # copy mime.types from build
+	cp "$BUILD_DIR/nginx/mime.types" "$BUILD_DIR/"
+	echo '-----> nginx-buildpack: Default mime.types copied to app/'
 else
-	echo '-----> nginx-buildpack: Custom mime.types found in app/config.'
+	echo '-----> nginx-buildpack: Custom mime.types found in app/'
 fi
 
-if [[ ! -f $BUILD_DIR/config/nginx.conf.erb ]]; then
-	cp config/nginx.conf.erb "$BUILD_DIR/config/"
-	echo '-----> nginx-buildpack: Default config copied to app/config.'
+if [[ ! -f $BUILD_DIR/nginx.conf.erb ]]; then
+  # copy nginx.conf.erb from config dir in repository
+	cp config/nginx.conf.erb "$BUILD_DIR/"
+	echo '-----> nginx-buildpack: Default config copied to app/'
 else
-	echo '-----> nginx-buildpack: Custom config found in app/config.'
+	echo '-----> nginx-buildpack: Custom config found in app/'
 fi
 
 # cleanup
