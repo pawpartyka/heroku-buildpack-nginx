@@ -51,8 +51,6 @@ echo '-----> nginx-buildpack: Added start-nginx-debug to app/bin'
 cp bin/start-nginx-static "$BUILD_DIR/bin/"
 echo '-----> nginx-buildpack: Added start-nginx-static to app/bin'
 
-# mkdir -p "$BUILD_DIR/config"
-
 if [[ ! -f $BUILD_DIR/mime.types ]]; then
   # copy mime.types from build
 	cp "$BUILD_DIR/nginx/mime.types" "$BUILD_DIR/"
