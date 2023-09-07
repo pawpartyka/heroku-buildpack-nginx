@@ -19,8 +19,6 @@ These are auto-selected based on the app's stack at build time.
 
 | Heroku Stack | Nginx Version |
 |--------------|--------------:|
-| `Heroku-18` | `1.25.1` |
-| `Heroku-20` | `1.25.1` |
 | `Heroku-22` | `1.25.1` |
 
 ## Presets
@@ -36,10 +34,6 @@ HTTP server for websites and single page apps. [[docs](static.md)]
 HTTP proxy to an app server running in the same dyno, via UNIX domain sockets. [[docs](proxy.md)]
 
 _Proxy is the original buildpack mode that is enabled by default, if the `config/nginx.conf.erb` file is not added to app source._
-
-### Solo mode (deprecated)
-
-This mode has been superceeded by [Static mode](static.md). 
 
 ## Custom Nginx usage
 
